@@ -3,8 +3,17 @@ package utils;
 import exceptions.LivroException;
 import model.Livro;
 
+/**
+ * Utilitário para validação de regras relacionadas a livros.
+ */
 public class LivroValidator {
 
+    /**
+     * Valida os dados de um livro.
+     *
+     * @param livro O livro a ser validado.
+     * @throws LivroException Se algum dado do livro for inválido.
+     */
     public static void validar(Livro livro) {
         if (livro == null) {
             throw new LivroException("Livro não pode ser nulo");

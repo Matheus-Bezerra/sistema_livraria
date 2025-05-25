@@ -14,6 +14,36 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * Classe principal que representa a biblioteca e encapsula as regras de negócio
+ * e operações relacionadas ao sistema de gerenciamento de biblioteca.
+ *
+ * <p>Esta classe utiliza serviços para gerenciar usuários, autores, livros e empréstimos.
+ * Ela serve como uma interface para as operações principais do sistema.</p>
+ *
+ * <h4>Responsabilidades:</h2>
+ * <ul>
+ *   <li>Gerenciar usuários (login, cadastro, consulta).</li>
+ *   <li>Gerenciar autores (cadastro, consulta).</li>
+ *   <li>Gerenciar livros (cadastro, consulta, filtro).</li>
+ *   <li>Gerenciar empréstimos (registro, devolução, histórico).</li>
+ * </ul>
+ *
+ * <h4>Dependências (Entidades):</h2>
+ * <ul>
+ *   <li>{@link UsuarioService}</li>
+ *   <li>{@link AutorService}</li>
+ *   <li>{@link LivroService}</li>
+ *   <li>{@link EmprestimoService}</li>
+ * </ul>
+ *
+ * <p>Esta classe utiliza persistência em memória para simplificar o gerenciamento de dados.</p>
+ *
+ * @author [Matheus Bezerra]
+ * @version 1.0
+ * @since 2025-05-25
+ */
+
 public class Biblioteca {
     private UsuarioService usuarioService = new UsuarioService();
     public AutorService autorService = new AutorService();

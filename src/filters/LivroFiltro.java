@@ -4,6 +4,14 @@ import enums.Genero;
 
 import java.time.LocalDateTime;
 
+/**
+ * Classe que representa os filtros de consulta de livros.
+ *
+ * @author [Matheus Bezerra]
+ *  * @version 1.0
+ *  * @since 2025-05-25
+ */
+
 public class LivroFiltro {
     private Boolean disponivel;
     private String titulo;
