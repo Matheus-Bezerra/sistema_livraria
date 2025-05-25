@@ -1,20 +1,28 @@
 package app;
 
 import filters.LivroFiltro;
+import model.Autor;
 import model.Emprestimo;
 import model.Livro;
 import model.Usuario;
+import services.AutorService;
 import services.EmprestimoService;
 import services.LivroService;
 import services.UsuarioService;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 public class Biblioteca {
     private UsuarioService usuarioService = new UsuarioService();
-    private LivroService livroService = new LivroService();
+    public AutorService autorService = new AutorService();
+    private LivroService livroService = new LivroService(autorService);
     private EmprestimoService emprestimoService = new EmprestimoService();
+
+    public Usuario login(String email, String senha) {
+        return usuarioService.login(email, senha);
+    }
 
     public List<Usuario> consultarUsuarios(String nome, String email) {
         return usuarioService.search(nome, email);
@@ -22,6 +30,19 @@ public class Biblioteca {
 
     public void cadastrarUsuario(Usuario usuario) {
         usuarioService.cadastrar(usuario);
+    }
+
+    public Autor consultarAutor(String nome) {
+        return autorService.procurar(nome);
+    }
+
+    public void cadastrarAutor(String nome, LocalDate dataNascimento) {
+        Autor autor = new Autor(nome, dataNascimento);
+        autorService.cadastrar(autor);
+    }
+
+    public Livro consultarLivro(String titulo) {
+        return livroService.procurar(titulo);
     }
 
     public List<Livro> consultarLivros(LivroFiltro filtro) {
@@ -36,7 +57,7 @@ public class Biblioteca {
         return emprestimoService.historico(livro, usuario);
     }
 
-    public void emprestarLivro(Livro livro, Usuario usuario, LocalDateTime dataDevolucao) {
+    public void pegarLivro(Livro livro, Usuario usuario, LocalDateTime dataDevolucao) {
         emprestimoService.cadastrar(livro, usuario, dataDevolucao);
     }
 

@@ -1,15 +1,17 @@
 package filters;
 
+import enums.Genero;
+
 import java.time.LocalDateTime;
 
 public class LivroFiltro {
     private Boolean disponivel;
     private String titulo;
     private String autor;
-    private String genero;
+    private Genero genero;
     private LocalDateTime dataCadastro;
 
-    public LivroFiltro(Boolean disponivel, String titulo, String autor, String genero, LocalDateTime dataCadastro) {
+    public LivroFiltro(Boolean disponivel, String titulo, String autor, Genero genero, LocalDateTime dataCadastro) {
         this.disponivel = disponivel;
         this.titulo = titulo;
         this.autor = autor;
@@ -27,7 +29,7 @@ public class LivroFiltro {
         return this.autor;
     }
 
-    public String getGenero() {
+    public Genero getGenero() {
         return this.genero;
     }
 

@@ -5,6 +5,7 @@ import exceptions.LivroException;
 import model.Emprestimo;
 import model.Livro;
 import model.Usuario;
+import utils.EmprestimoValidator;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class EmprestimoService {
     }
 
     public void cadastrar(Livro livro, Usuario usuario, LocalDateTime dataDevolucao) {
+        EmprestimoValidator.validar(dataDevolucao);
+
         if (livro.isDisponivel()) {
             Emprestimo emprestimo = new Emprestimo(livro, usuario, dataDevolucao);
             this.emprestimos.add(emprestimo);

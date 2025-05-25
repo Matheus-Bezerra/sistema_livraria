@@ -32,8 +32,17 @@ public class Livro {
         return this.titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+        this.dataAtualizacao = LocalDateTime.now();
+    }
+
     public Autor getAutor() {
         return this.autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 
     public Genero getGenero() {

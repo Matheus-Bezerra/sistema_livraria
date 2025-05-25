@@ -12,6 +12,15 @@ import java.util.List;
 public class UsuarioService {
     private List<Usuario> usuarios = new ArrayList<>();
 
+    public Usuario login(String email, String senha) {
+        for (Usuario usuario : this.usuarios) {
+            if (EmailValidator.isValid(email) && usuario.getEmail().equals(email) && SenhaValidator.isValid(senha) && usuario.getSenha().equals(senha)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
+
     public List<Usuario> search(String nome, String email) {
         return this.usuarios.stream().filter(usuario ->
                 (nome == null || usuario.getNome().toLowerCase().contains(nome.toLowerCase())) &&
