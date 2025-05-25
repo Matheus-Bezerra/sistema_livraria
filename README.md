@@ -17,13 +17,14 @@ Um sistema simples de gerenciamento de biblioteca implementado em Java, utilizan
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias & Técnicas Utilizadas
 
 - Java 17+
 - Orientação a Objetos (POO)
 - Tratamento de Exceções
 - Enumerações
 - Coleções Java (`List`, `Map`)
+- JavaDoc
 - `Scanner` para entrada de dados via terminal
 
 ---
@@ -87,6 +88,7 @@ Este projeto foi desenvolvido com foco no aprendizado e prática dos seguintes c
 - Tratamento de exceções personalizadas
 - Entrada e saída de dados via terminal
 - Implementação de filtros de consulta
+- Aplicar conceitos de JavaDoc no projeto
 
 ---
 
